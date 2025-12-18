@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retirement Value Promise</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #0D1328;      /* Main title color */
+      --secondary: #A78945;    /* Eyebrow gold */
+      --text-main: #2A2E3B;    /* Body text */
+      --light: #f8fafc;
+       --navy: #080d1a;
+       --gold: #caa355;
+    --text: #333;
+    --muted: #777;
+      /* --card: #ffffff; */
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      
+      font-family: "Inter", system-ui, sans-serif;
+    }
+
+    html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+    /* ================== NAVBAR ================== */
+.navbar {
+    width: 100%;
+    height: 90px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #e2d3a8;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f5e2b8;
+}
+
+.logo {
+    height: 55px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.login {
+    color: #e2d3a8;
+    font-size: 17px;
+}
+
+.invest-btn {
+    padding: 12px 26px;
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.invest-btn:hover {
+    background: #d7b96a;
+}
+
+/* ================== HAMBURGER ================== */
+.hamburger {
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #e2d3a8;
+}
+
+/* ================== MOBILE PANEL ================== */
+.mobile-panel {
+    display: none;
+    flex-direction: column;
+    background: var(--navy);
+    width: 100%;
+    padding: 20px;
+    position: fixed;
+    top: 90px;
+    right: 0;
+    z-index: 998;
+    border-left: 1px solid #333;
+}
+
+.mobile-panel a {
+    color: #e2d3a8;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 12px 0;
+}
+
+/* ================== RESPONSIVE RULES ================== */
+@media (max-width: 850px) {
+    .nav-links,
+    .login,
+    .invest-btn {
+        display: none;
+        padding: 0 20px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .logo {
+        height: 45px;
+    }
+}
+
+/* Section 1 Hero  */
+.mvx-hero-section {
+  background: #f6eeda;
+  padding: 80px 0;
+}
+
+.mvx-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 820px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* TEXT */
+.mvx-hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(36px, 4.5vw, 48px);
+  line-height: 1.15;
+  margin-bottom: 22px;
+}
+
+.mvx-hero-lead {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.mvx-hero-sub {
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+/* ✔ TICK LIST — RESTORED */
+.mvx-hero-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px;
+}
+
+.mvx-hero-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 14px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: #2A2E3B;
+}
+
+.mvx-hero-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* Closing text */
+.mvx-hero-close {
+  font-size: 16px;
+  margin-bottom:22px;
+}
+
+.mvx-hero-statement {
+  border-left: 3px solid var(--gold);
+  padding-left: 14px;
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+.mvx-hero-visual {
+  margin-top: 150px;
+  margin-left: -30px;
+}
+
+/* IMAGE */
+.mvx-hero-visual img {
+  width: 100%;
+  max-width: 620px;      /* ⬅ increase desktop size */
+  aspect-ratio: 3 / 4; /*  keeps shape consistent */
+  height: auto;
+  object-fit: center bottom;
+  margin: 0 auto;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .mvx-hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .mvx-hero-visual {
+    margin-top: 40px; /* tablet slide */
+  }
+
+  .mvx-hero-visual img {
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mvx-hero-visual {
+    margin-top: 20px; /* mobile slide */
+  }
+
+  .mvx-hero-visual img {
+    max-width: 100%;
+    aspect-ratio: 3 / 4; /* taller image on mobile */
+  }
+}
+
+/* Section -2 value Promise */
+/* ===============================
+   Retirement Section – Premium Skin
+   =============================== */
+
+  .retirement-section {
+      max-width: 1200px;
+      margin: 5px auto;
+      padding: 0 24px;
+    }
+
+    /* ===============================
+       Section Header
+       =============================== */
+
+    .section-tag {
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #B59652;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+
+    .retirement-section h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(30px, 3.2vw, 40px);
+      line-height: 1.18;
+      font-weight: 700;
+      color: #0D1328;
+      max-width: 760px;
+      margin: 0 0 24px;
+    }
+
+    .retirement-section h2 span {
+      color: #B59652;
+    }
+
+    .intro-text {
+      font-size: 15.5px;
+      line-height: 1.7;
+      max-width: 720px;
+      margin-bottom: 14px;
+    }
+
+    /* ===============================
+       Benefits Layout (NO BOXES)
+       =============================== */
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 80px;
+      margin-top: 50px;
+      max-width: 1000px;
+    }
+
+    .benefit-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .icon {
+      font-size: 18px;
+      line-height: 1;
+      color: #CBA45A;
+      margin-top: 6px;
+    }
+
+    .benefit-card h4 {
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      margin: 0 0 6px;
+      color: #0D1328;
+    }
+
+    .benefit-card p {
+      font-size: 14.5px;
+      line-height: 1.65;
+      margin: 0;
+      color: #2A2E3B;
+    }
+
+    /* ===============================
+       Closing Message
+       =============================== */
+
+    .closing-message {
+      margin-top: 80px;
+      max-width: 760px;
+    }
+
+    .closing-message h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #0D1328;
+    }
+
+    .closing-message p {
+      font-size: 15.5px;
+      line-height: 1.7;
+    }
+
+    /* ===============================
+       Responsive
+       =============================== */
+
+    @media (max-width: 900px) {
+      .benefits-grid {
+        grid-template-columns: 1fr  !important;
+        gap: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .retirement-section {
+        margin: 60px auto;
+      }
+
+      .retirement-section h2 {
+        font-size: 28px;
+      }
+    }
+    /* Section 3 css */
+/* =========================
+   Section
+========================= */
+.mv-serve-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+/* =========================
+   Header
+========================= */
+.mv-serve-header {
+  max-width: 720px;
+  margin-bottom: 64px;
+}
+
+.mv-serve-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 14px;
+  display: inline-block;
+}
+
+.mv-serve-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 4vw, 44px);
+  line-height: 1.15;
+  color: var(--primary);
+  margin-bottom: 22px;
+}
+
+.mv-serve-title span {
+  color: var(--gold);
+}
+
+.mv-serve-sub {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =========================
+   Grid
+========================= */
+/* =========================
+   Grid (4 top, 3 bottom)
+========================= */
+.mv-serve-shapes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  justify-items: center;
+}
+
+/* =========================
+   Circle Card (REAL circles)
+========================= */
+.mv-serve-circle {
+  width: 210px;
+  height: 210px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 14px 36px rgba(13, 19, 40, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  padding: 24px;
+}
+
+/* =========================
+   Icon
+========================= */
+.mv-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(181, 150, 82, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.mv-icon i {
+  font-size: 18px;
+  color: var(--gold);
+}
+
+/* =========================
+   Text
+========================= */
+.mv-serve-circle p {
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 1024px) {
+  .mv-serve-shapes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .mv-serve-shapes {
+    grid-template-columns: 1fr;
+  }
+
+  .mv-serve-circle {
+     width: 200px !important;
+    height: 200px !important;
+  }
+}
+
+
+/* @media (max-width: 480px) {
+  .mv-serve-shapes {
+    grid-template-columns: 1fr;
+  }
+
+  .mv-serve-circle {
+    width: 220px;
+    height: 220px;
+  }
+} */
+
+/* Section - 4  */
+  .mvx-retire-section {
+  background: linear-gradient(180deg, #0B1226, #0E1633);
+  padding: 100px 0;
+}
+
+.mvx-retire-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  color: #E6E9F2;
+}
+
+.mvx-retire-head {
+  max-width: 760px;
+  margin-bottom: 70px;
+}
+
+.mvx-retire-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 14px;
+  display: inline-block;
+}
+
+.mvx-retire-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(34px, 4vw, 46px);
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.mvx-retire-sub {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #B7BED9;
+}
+
+/* Flow */
+.mvx-retire-flow {
+  position: relative;
+  margin-left: 40px;
+  padding-left: 40px;
+}
+
+.mvx-retire-flow::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(181, 150, 82, 0.35);
+}
+
+/* Step */
+.mvx-retire-step {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 28px;
+  margin-bottom: 46px;
+}
+
+.mvx-step-num {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  color: var(--gold);
+  text-align: right;
+  padding-top: 4px;
+}
+
+.mvx-step-body h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+
+.mvx-step-body p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #B7BED9;
+  margin: 0;
+}
+.mvx-step-body ul {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #B7BED9;
+  padding-left: 50px;
+  margin: 0;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .mvx-retire-flow {
+    margin-left: 0;
+    padding-left: 20px;
+  }
+
+  .mvx-retire-step {
+    grid-template-columns: 44px 1fr;
+    gap: 20px;
+  }
+
+  .mvx-step-num {
+    font-size: 18px;
+  }
+}
+
+
+/* Section -5 CSS WHAT YOU RECEIVE */
+.mvx-receive-section {
+  background: var(--bg);
+  padding: 70px 0;
+}
+
+.mvx-receive-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  color: var(--text-dark);
+}
+
+/* Eyebrow */
+.mvx-receive-eyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #B59652;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 14px;
+}
+
+/* Title */
+.mvx-receive-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(34px, 4vw, 44px);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+/* Intro */
+.mvx-receive-intro {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 42px;
+  max-width: 720px;
+}
+
+/* Grid */
+.mvx-receive-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-bottom: 50px;
+}
+
+/* Card */
+.mvx-receive-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 22px 22px 22px 56px;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  font-family: "Inter", sans-serif;
+}
+
+.mvx-receive-card p {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+
+/* Number circle */
+.mvx-num {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+background: var(--gold);;
+  color: var(--text-dark);
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Note */
+.mvx-receive-note {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 26px;
+}
+
+.mvx-receive-note p {
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+.mvx-receive-note-strong {
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .mvx-receive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .mvx-receive-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mvx-receive-section {
+    padding: 40px 0;
+  }
+}
+/* Section -6 Emotional Positioning */
+.mvx-emotion-section {
+  background: #f6eeda;
+  padding: -30px 0;
+}
+
+.mvx-emotion-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* CONTENT */
+.mvx-emotion-wrap {
+  color: #0D1328;
+}
+
+/* Eyebrow */
+.mvx-emotion-eyebrow {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+/* Title */
+.mvx-emotion-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(34px, 4vw, 44px);
+  line-height: 1.18;
+  margin-bottom: 22px;
+}
+
+/* Intro */
+.mvx-emotion-intro {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  color: #2A2E3B;
+  margin-bottom: 26px;
+}
+
+/* Tick list */
+.mvx-emotion-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 44px;
+}
+
+.mvx-emotion-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 14px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+/* ✔ Tick icon — NEVER REMOVED */
+.mvx-emotion-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--gold);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Closing */
+.mvx-emotion-close p {
+  font-size: 17px;
+  margin: 6px 0;
+}
+
+.mvx-emotion-strong {
+  font-weight: 600;
+}
+
+/* IMAGE */
+.mvx-emotion-visual img {
+  width: 100%;
+  max-width: 550px;
+  height: 450px;
+  border-radius: 14px;
+  display: block;
+}
+
+/* RESPONSIVE — image moves DOWN only on mobile */
+@media (max-width: 900px) {
+  .mvx-emotion-container {
+    grid-template-columns: 1fr;
+  }
+
+  .mvx-emotion-visual {
+  height: auto !important;
+  }
+}
+
+/* Section -7 FAQ  */
+/* ===============================
+   Retirement Section – Premium Skin
+   =============================== */
+
+.mv7-faq-section {
+  background: #f6eeda;
+  padding: 90px 0;
+}
+
+.mv7-faq-container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.mv7-faq-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(34px, 4vw, 44px);
+  text-align: center;
+  margin-bottom: 48px;
+  color: #0D1328;
+}
+
+/* FAQ item */
+/* Default FAQ box */
+/* FAQ SECTION WRAPPER */
+.mv7-faq-section {
+  background: #f6eeda;
+  padding: 90px 0;
+}
+
+/* FAQ CONTAINER */
+.mv7-faq-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* FAQ TITLE */
+.mv7-faq-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(34px, 4vw, 44px);
+  text-align: center;
+  margin-bottom: 50px;
+  color: #0D1328;
+}
+
+/* EACH FAQ ITEM */
+.mv7-faq-item {
+  border: 1px solid #D5D3CC;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  background: transparent;
+  overflow: hidden;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+/* 👉 HOVER STATE — FULL GOLD BOX */
+.mv7-faq-item:hover {
+  background-color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* 👉 ACTIVE (OPENED) STATE — STAYS GOLD */
+.mv7-faq-item.active {
+  background-color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* QUESTION BUTTON */
+.mv7-faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 16px 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #0D1328;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* REMOVE DEFAULT BUTTON STYLES */
+.mv7-faq-question:focus {
+  outline: none;
+}
+
+/* ANSWER PANEL */
+.mv7-faq-answer {
+  display: none;
+  background: #F6F4EF;
+  padding: 18px 20px 22px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #2A2E3B;
+}
+
+/* SHOW ANSWER WHEN ACTIVE */
+.mv7-faq-item.active .mv7-faq-answer {
+  display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .mv7-faq-section {
+    padding: 70px 0;
+  }
+
+  .mv7-faq-question {
+    font-size: 15px;
+  }
+}
+/* ===============================
+   SECTION 8 — FINAL CTA
+================================ */
+
+.mv-final-cta {
+  margin: -30px auto;
+  padding: 0 24px;
+  background: linear-gradient(180deg, #0B1226, #0E1633);
+}
+
+.mv-final-cta-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Section Heading */
+.mv-final-cta-heading {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #977F55;
+  margin-bottom: 22px;
+}
+
+/* Quote-style text */
+.mv-final-cta-quote {
+  border-left: 4px solid #977F55;
+  padding-left: 22px;
+  margin-bottom: 40px;
+  color: #B7BED9;
+}
+
+.mv-final-cta-quote p {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(22px, 2.6vw, 28px);
+  line-height: 1.4;
+  color: white;
+  margin: 0;
+}
+
+/* Buttons wrapper */
+.mv-final-cta-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+/* Common button style */
+.mv-final-btn {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14.5px;
+  padding: 13px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  letter-spacing: 0.3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Gold filled buttons */
+.mv-btn-primary {
+  background: #977F55;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.mv-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(151, 127, 85, 0.35);
+}
+
+/* Footer text */
+.mv-final-cta-footer {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 13.5px;
+  color: #B7BED9;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .mv-final-cta {
+    margin: 70px auto;
+  }
+}
+@media (max-width: 600px) {
+  .mv-final-cta-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+  </style>
+</head>
+<body>
+    
+<!-- ================== NAVBAR ================== -->
+<nav class="navbar">
+    <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="why-us.html">Why Us</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+
+    <img src="logo.jpg" alt="Moneyvesta Logo" class="logo">
+
+    <div class="nav-right">
+        <a href="login.html" class="login">Login</a>
+        <button class="invest-btn">Start Investing</button>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </div>
+</nav>
+<!-- ================== MOBILE MENU ================== -->
+<div class="mobile-panel" id="mobilePanel">
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="why-us.html">Why Us</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="login.html">Login</a>
+</div>
+<!--  Section -1  -->
+<section class="mvx-hero-section">
+  <div class="mvx-hero-container">
+
+    <!-- Text Column -->
+    <div class="mvx-hero-text">
+
+      <h1 class="mvx-hero-title">
+        Retirement Should Feel Like Freedom.<br>
+        Not Uncertainty.
+      </h1>
+
+      <p class="mvx-hero-lead">
+        Most professionals work hard for decades but still worry about one question.
+        <strong>Will I have enough?</strong>
+      </p>
+
+      <p class="mvx-hero-sub">The uncertainty comes from:</p>
+
+      <!-- ✔ TICK LIST (NOT REMOVED) -->
+      <ul class="mvx-hero-list">
+        <li>Not knowing how much retirement will actually cost</li>
+        <li>Not knowing how long the money needs to last</li>
+        <li>Not having a clear retirement corpus target</li>
+        <li>Scattered investments without a long term structure</li>
+        <li>Inability to visualise life after work</li>
+        <li>Confusion around EPF, NPS, mutual funds and pensions</li>
+        <li>Worrying about medical and lifestyle expenses in later years</li>
+      </ul>
+
+      <p class="mvx-hero-close">
+        Retirement planning is not just a financial calculation.<br>
+        <strong>It is a life planning decision.</strong>
+      </p>
+
+      <div class="mvx-hero-statement">
+        At Moneyvesta, we help you design a retirement plan that gives you clarity
+        for the next 30 to 40 years of your life.
+      </div>
+
+    </div>
+
+    <!-- Image Column -->
+    <div class="mvx-hero-visual">
+      <img src="retirement.jpg" alt="Retirement planning advisory illustration">
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Section -2 Valur Promise -->
+  
+  <section class="retirement-section">
+    <span class="section-tag">VALUE PROMISE</span>
+
+    <h2>
+      Retirement Planning Should <span>Never Be Guesswork</span>
+    </h2>
+
+    <p class="intro-text">
+      Retirement Planning Should Not Be Guesswork
+    </p>
+    <p class="intro-text">
+      A strong retirement plan gives you:
+    </p>
+
+    <div class="benefits-grid">
+
+      <div class="benefit-card">
+        <div class="icon">✔</div>
+        <div>
+          <h4>Absolute Clarity</h4>
+          <p>Clarity on how much you actually need</p>
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="icon">✔</div>
+        <div>
+          <h4>Lasting Confidence</h4>
+          <p>Confidence that your money will last</p>
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="icon">✔</div>
+        <div>
+          <h4>Smart Growth Strategy</h4>
+          <p>A strategy to grow and protect your corpus</p>
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="icon">✔</div>
+        <div>
+          <h4>Peace of Mind</h4>
+          <p>Peace of mind that you are not under saving or over saving</p>
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="icon">✔</div>
+        <div>
+          <h4>Income Visibility</h4>
+          <p>Visibility on your post retirement income</p>
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="icon">✔</div>
+        <div>
+          <h4>Life-Responsive Planning</h4>
+          <p>A plan that adjusts as life changes</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="closing-message">
+      <h3>You work hard for stability.</h3>
+      <p>Your retirement plan should return that stability — for life.</p>
+    </div>
+
+  </section>
+   <!-- section 3 - who we serve -->
+  <section class="mv-serve-section">
+
+  <div class="mv-serve-header">
+    <span class="mv-serve-eyebrow">WHO WE SERVE</span>
+    <h2 class="mv-serve-title">
+      Built for Professionals Who Want a <span>Thoughtful Retirement Strategy</span>
+    </h2>
+    <p class="mv-serve-sub">
+      Our retirement planning advisory is designed for individuals who seek clarity, structure, and long-term confidence.
+    </p>
+  </div>
+
+  <div class="mv-serve-shapes">
+
+    <div class="mv-serve-circle">
+      <span class="mv-icon"><i class="fa-solid fa-user-tie"></i></span>
+      <p>Working professionals in their <strong>30s, 40s & 50s</strong></p>
+    </div>
+
+    <div class="mv-serve-circle">
+      <span class="mv-icon"><i class="fa-solid fa-chart-line"></i></span>
+      <p>individuals with rising incomes but unclear long term strategy</p>
+    </div>
+
+    <div class="mv-serve-circle">
+      <span class="mv-icon"><i class="fa-solid fa-people-roof"></i></span>
+      <p>Dual income families</p>
+    </div>
+
+    <div class="mv-serve-circle">
+      <span class="mv-icon"><i class="fa-solid fa-building-columns"></i></span>
+      <p>Senior executives with <strong>EPF, NPS & ESOPs</strong></p>
+    </div>
+
+    <div class="mv-serve-circle">
+      <span class="mv-icon"><i class="fa-solid fa-globe"></i></span>
+      <p>NRIs planning a structured return to India</p>
+    </div>
+
+    <div class="mv-serve-circle">
+      <span class="mv-icon"><i class="fa-solid fa-people-arrows"></i></span>
+      <p>Professionals supporting ageing parents & growing families</p>
+    </div>
+
+    <div class="mv-serve-circle">
+      <span class="mv-icon"><i class="fa-solid fa-circle-question"></i></span>
+      <p>Individuals unsure how much they truly need for retirement</p>
+    </div>
+    <div class="mv-serve-circle">
+  <span class="mv-icon">
+    <i class="fa-solid fa-briefcase"></i>
+  </span>
+  <p>
+   Self-employed individuals without formal retirement plans
+  </p>
+</div>
+
+  </div>
+  
+  <div class="mv-serve-cta">
+    <p>You want clarity.</p>
+    <p>You want confidence.</p>
+    <p class="mv-serve-cta-strong">
+      You want a strategy that protects your lifestyle and your dignity — long into the future.
+    </p>
+  </div>
+
+</section>
+<!-- Section -4 The Moneyvesta Method -->
+  <section class="mvx-retire-section">
+
+  <div class="mvx-retire-wrap">
+    <div class="mvx-retire-head">
+      <span class="mvx-retire-eyebrow">THE MONEYVESTA METHOD</span>
+      <h2 class="mvx-retire-title">How We Build Your Retirement Plan</h2>
+      <p class="mvx-retire-sub">
+        Our framework blends numbers, behaviour, lifestyle needs and long term wealth strategy.
+      </p>
+    </div>
+
+    <div class="mvx-retire-flow">
+
+      <div class="mvx-retire-step">
+        <div class="mvx-step-num">01</div>
+        <div class="mvx-step-body">
+          <h4>Life and Lifestyle Discovery</h4>
+          <p>
+            We understand the lifestyle you want in retirement. Travel, healthcare needs, home plans,
+            hobbies, responsibilities and preferred living standards.
+          </p>
+        </div>
+      </div>
+
+      <div class="mvx-retire-step">
+        <div class="mvx-step-num">02</div>
+        <div class="mvx-step-body">
+          <h4>Retirement Corpus Calculation</h4>
+          <p>
+            We calculate your retirement number based on current expenses, lifestyle inflation,
+            healthcare inflation, longevity assumptions and future responsibilities.
+            This gives you a clear target.
+          </p>
+        </div>
+      </div>
+
+      <div class="mvx-retire-step">
+        <div class="mvx-step-num">03</div>
+        <div class="mvx-step-body">
+          <h4>EPF, NPS and Existing Investments Review</h4>
+          <p>
+            We analyse how your existing assets contribute to your retirement goal.
+            This avoids duplication and helps you understand gaps.
+          </p>
+        </div>
+      </div>
+
+      <div class="mvx-retire-step">
+        <div class="mvx-step-num">04</div>
+        <div class="mvx-step-body">
+          <h4>Investment Strategy for Retirement</h4>
+          <p>Your retirement portfolio is built with the right mix of:</p>
+          <ul>
+            <li>long term compounding assets</li>
+            <li>stability focused investments</li>
+            <li>inflation beating components</li>
+            <li>low volatility income streams</li>
+          </ul>
+            
+        </div>
+      </div>
+
+      <div class="mvx-retire-step">
+        <div class="mvx-step-num">05</div>
+        <div class="mvx-step-body">
+          <h4>SIP and Contribution Planning</h4>
+          <p>
+            We help you understand how much you need to invest: monthly, annually and through
+            variable income like bonuses and ESOPs.
+          </p>
+        </div>
+      </div>
+
+      <div class="mvx-retire-step">
+        <div class="mvx-step-num">06</div>
+        <div class="mvx-step-body">
+          <h4>Post Retirement Income Strategy</h4>
+          <p>
+            We structure: systematic withdrawals, annuity needs, safety buckets, medical buffers
+            and liquidity planning so your money lasts as long as you need it to.
+          </p>
+        </div>
+      </div>
+
+      <div class="mvx-retire-step">
+        <div class="mvx-step-num">07</div>
+        <div class="mvx-step-body">
+          <h4>Annual Review and Adjustments</h4>
+          <p>
+            Life changes. Market cycles shift. Your retirement plan evolves through yearly reviews.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- Section -5 What You Receive -->
+ <section class="mvx-receive-section">
+  <div class="mvx-receive-wrap">
+
+    <span class="mvx-receive-eyebrow">SECTION 5 — WHAT YOU RECEIVE</span>
+
+    <h2 class="mvx-receive-title">
+      Your Retirement Planning Advisory Includes
+    </h2>
+
+    <p class="mvx-receive-intro">
+      A complete, personalised roadmap that helps you retire with clarity and confidence:
+    </p>
+
+    <div class="mvx-receive-grid">
+      <div class="mvx-receive-card">
+        <span class="mvx-num">1</span>
+        <p>Your retirement corpus target</p>
+      </div>
+
+      <div class="mvx-receive-card">
+        <span class="mvx-num">2</span>
+        <p>Monthly and annual savings plan</p>
+      </div>
+
+      <div class="mvx-receive-card">
+        <span class="mvx-num">3</span>
+        <p>EPF and NPS utilisation strategy</p>
+      </div>
+
+      <div class="mvx-receive-card">
+        <span class="mvx-num">4</span>
+        <p>Mutual fund and asset allocation plan</p>
+      </div>
+
+      <div class="mvx-receive-card">
+        <span class="mvx-num">5</span>
+        <p>Inflation and lifestyle modelling</p>
+      </div>
+
+      <div class="mvx-receive-card">
+        <span class="mvx-num">6</span>
+        <p>Medical and emergency planning</p>
+      </div>
+
+      <div class="mvx-receive-card">
+        <span class="mvx-num">7</span>
+        <p>Post retirement income design</p>
+      </div>
+
+      <div class="mvx-receive-card">
+        <span class="mvx-num">8</span>
+        <p>Annual reviews and progress tracking</p>
+      </div>
+    </div>
+
+    <div class="mvx-receive-note">
+      <p>This is not a generic report.</p>
+      <p class="mvx-receive-note-strong">
+        It is a long-term partnership.
+      </p>
+    </div>
+
+  </div>
+</section>
+<!-- Section -6 Emotional Positioning -->
+<section class="mvx-emotion-section">
+
+  <div class="mvx-emotion-container">
+
+    <!-- LEFT : CONTENT -->
+    <div class="mvx-emotion-wrap">
+
+      <span class="mvx-emotion-eyebrow">EMOTIONAL POSITIONING</span>
+
+      <h2 class="mvx-emotion-title">
+        Retirement Should Feel Like Control, Not Compromise
+      </h2>
+
+      <p class="mvx-emotion-intro">
+        With a well designed retirement plan:
+      </p>
+
+      <ul class="mvx-emotion-list">
+        <li>You know exactly how much you need.</li>
+        <li>You stop worrying about the future.</li>
+        <li>You understand how your money will support your lifestyle.</li>
+        <li>You gain confidence that your family is protected.</li>
+        <li>You make decisions from a place of clarity, not fear.</li>
+      </ul>
+
+      <div class="mvx-emotion-close">
+        <p>Your future should be peaceful.</p>
+        <p class="mvx-emotion-strong">
+          Your money should help you live it with dignity.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- RIGHT : IMAGE -->
+    <div class="mvx-emotion-visual">
+      <img src="emotional.jpg" alt="Retirement planning discussion">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Section -7 FAQ  -->
+ 
+<section class="mv7-faq-section">
+
+  <div class="mv7-faq-container">
+
+    <h2 class="mv7-faq-title">Frequently Asked Questions</h2>
+
+    <div class="mv7-faq-item">
+      <button class="mv7-faq-question">
+        What is retirement planning advisory?
+      </button>
+      <div class="mv7-faq-answer">
+        It is professional guidance that helps you plan how to accumulate,
+        preserve, and withdraw money across your retirement years with clarity
+        and discipline.
+      </div>
+    </div>
+
+    <div class="mv7-faq-item">
+      <button class="mv7-faq-question">
+        Is Moneyvesta a SEBI registered retirement advisor?
+      </button>
+      <div class="mv7-faq-answer">
+        Yes. Moneyvesta Capital Services Private Limited is a <strong>SEBI Registered Investment Advisor</strong>
+         with RIA number INA000018407.
+      </div>
+    </div>
+
+    <div class="mv7-faq-item">
+      <button class="mv7-faq-question">
+        How is this different from pension plans or insurance?
+      </button>
+      <div class="mv7-faq-answer">
+        Those are products. We provide independent, research-based <strong>retirement planning advice</strong>
+         that helps you decide what truly fits your goals.
+      </div>
+    </div>
+
+    <div class="mv7-faq-item">
+      <button class="mv7-faq-question">
+        When should I start planning for retirement?
+      </button>
+      <div class="mv7-faq-answer">
+        The earlier you start, the more control you gain. We advise starting
+        at least 10–15 years before your desired retirement age.
+      </div>
+    </div>
+
+    <div class="mv7-faq-item">
+      <button class="mv7-faq-question">
+        Do you advise retirees as well?
+      </button>
+      <div class="mv7-faq-answer">
+        Yes. We guide both pre-retirement accumulation and post-retirement
+        income optimization.
+      </div>
+    </div>
+
+    <div class="mv7-faq-item">
+      <button class="mv7-faq-question">
+        How often should I review my retirement plan?
+      </button>
+      <div class="mv7-faq-answer">
+        We review annually or whenever life events or market changes
+        materially affect your financial position.
+      </div>
+    </div>
+
+    <div class="mv7-faq-item">
+      <button class="mv7-faq-question">
+        Can you help with tax-efficient withdrawals?
+      </button>
+      <div class="mv7-faq-answer">
+        Yes. Our plan includes tax-optimized withdrawal strategies designed
+        to provide steady income with lower risk.
+      </div>
+    </div>
+
+    <div class="mv7-faq-item">
+      <button class="mv7-faq-question">
+        Who benefits most from retirement planning advisory?
+      </button>
+      <div class="mv7-faq-answer">
+        Professionals, entrepreneurs, and families who want confidence that
+        their wealth will support a secure, independent future.
+      </div>
+    </div>
+
+  </div>
+
+</section>
+<!-- Section 8 Final Call to action  -->
+ <section class="mv-final-cta">
+
+  <div class="mv-final-cta-inner">
+
+    <!-- Section Heading -->
+    <h2 class="mv-final-cta-heading">
+      Final Call To Action
+    </h2>
+
+    <!-- Quote Text -->
+    <div class="mv-final-cta-quote">
+      <p>
+       <i>The best time to plan your retirement was yesterday.</i> 
+        <br>
+        <strong><i>The second-best is now.</i></strong>
+      </p>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="mv-final-cta-actions">
+      <a href="" class="mv-final-btn mv-btn-primary">
+        Plan My Retirement →
+      </a>
+
+      <a href="contact.html" class="mv-final-btn mv-btn-primary">
+        Schedule Consultation →
+      </a>
+    </div>
+
+    <!-- Footer Line -->
+    <p class="mv-final-cta-footer">
+      Moneyvesta Wealth Management —
+      <strong>Trusted by India’s Smartest Minds.</strong>
+    </p>
+
+  </div>
+
+</section>
+
+
+  <script>
+    
+function toggleMenu() {
+    const panel = document.getElementById("mobilePanel");
+    panel.style.display = (panel.style.display === "flex") ? "none" : "flex";
+}
+// Option Button Logic
+function setupOptionButtons(groupId, callback) {
+    const group = document.getElementById(groupId);
+    const buttons = group.querySelectorAll('.option-btn');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            callback(btn);
+        });
+    });
+}
+    // Simple scroll-based fade-in animation
+    const elements = document.querySelectorAll('.fade-in');
+
+    const revealOnScroll = () => {
+      const triggerPoint = window.innerHeight * 0.85;
+
+      elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < triggerPoint) {
+          el.classList.add('show');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+    document.querySelectorAll('.mv7-faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.parentElement;
+
+      document.querySelectorAll('.mv7-faq-item').forEach(i => {
+        if (i !== item) i.classList.remove('active');
+      });
+
+      item.classList.toggle('active');
+    });
+  });
+  </script>
+
+</body>
+</html>
